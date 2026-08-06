@@ -2,14 +2,14 @@
 title: "String Mathematics — Module 1"
 subtitle: "Foundations: Strings, Trees, the Root, and the Factorial"
 author: "Prime Framework — Syllabus-Learning Series"
-date: "Module 1 of the String Mathematics syllabus — Version 2"
+date: "Module 1 of the String Mathematics syllabus — Version 3"
 ---
 
 # Module 1 — Foundations
 
 ## Strings, String Trees, the Root, and the Factorial
 
-**Version 2.** See §16 for the revision history and what changed from Version 1.
+**Version 3.** See §16 for the revision history.
 
 ---
 
@@ -70,7 +70,7 @@ Each position means something specific:
 |---|---|---|---|
 | Leading number | $j$ | **Lineage depth** | How many generations below the Base String this string sits |
 | Core letter | $S$ | **String** | The object itself |
-| Superscript left | $k$ | **Order** | The order of the operation applied to build the Base String |
+| Superscript left | $k$ | **Order** | The power each Prime value is raised to: $B_n = (P_n)^k$ |
 | Superscript right | $f$ | **Prime-generating function** | The rule that generates the Prime String |
 | Subscript | $n$ | **Index** | Which term of the string you are looking at |
 | Pre-superscript | $X$ | **Kind** | `D` for Direct, `C` for Comparative (omitted when clear) |
@@ -88,8 +88,12 @@ Three strings have their own symbols, because they are referred to constantly:
 | Symbol | Name | Definition |
 |---|---|---|
 | $P^{f}$ | **Prime String** | The generating sequence: a seed value and a rule $f$ applied repeatedly |
-| $B^{\,k\,|\,f}$ | **Base String** | The Prime String with an operation of order $k$ applied to each term |
+| $B^{\,k\,|\,f}$ | **Base String** | Each Prime value raised to the $k$-th power: $B_n = (P_n)^k$ |
 | $jS^{\,k\,|\,f}$ | **Substring** | A child string, built from relationships between adjacent terms of its parent |
+
+**Read the Base String symbol concretely.** $B^{2}(4)$ means: take the term at **index 4** of the Prime String, and square it. With the regular whole-integer Prime String that term is $4$, so $B^{2}(4) = 16$.
+
+**Index, not position.** Because indexing starts at $n = 0$ (§2.4), "index 4" is the *fifth* term written down. The phrase "the 4th term" is ambiguous in ordinary English and is avoided throughout this syllabus — always say **index**.
 
 ## 2.3 The indexing convention
 
@@ -567,6 +571,23 @@ $$ k! \;\stackrel{?}{=}\; \sum_{j=0}^{k} (-1)^{\,k-j} \binom{k}{j}\, j^{\,k} $$
 
 Count them by inclusion–exclusion. There are $j^k$ ways to place $k$ balls into a chosen subset of $j$ boxes with no restriction; there are $\binom{k}{j}$ ways to choose which $j$ boxes; and the alternating signs remove the arrangements that miss one or more boxes. The result is exactly the sum above.
 
+**That step is the one place this proof asks you to take something on trust, so here it is worked out in full at $k = 2$** — small enough to check by listing every case.
+
+Two balls $\{1, 2\}$, two boxes $\{A, B\}$. All possible placements:
+
+| | ball 1 | ball 2 | every box used? |
+|---|---|---|---|
+| 1 | A | A | no — B is empty |
+| 2 | A | B | **yes** |
+| 3 | B | A | **yes** |
+| 4 | B | B | no — A is empty |
+
+Four placements, **two** of which use every box.
+
+Now the inclusion–exclusion count: start with all $2^2 = 4$ placements; subtract the ones that miss at least one box — there are $\binom{2}{1} = 2$ boxes that could be the sole survivor, and $1^2 = 1$ placement each, so subtract $2$; add back the ones missing two boxes, of which there are none. Total $4 - 2 + 0 = 2$. ✔
+
+And the formula gives $\;0 - 2(1) + 1(4) = 2\;$ — the same $2$, which is $2!$. **The listing, the inclusion–exclusion, and the formula all agree at $k = 2$**, which is enough to see the mechanism before trusting it in general.
+
 **Now count the same thing directly.** We have $k$ balls and $k$ boxes, every box must receive at least one ball, and there are only $k$ balls to go round. So **every box receives exactly one ball** — the arrangement is a one-to-one pairing of balls with boxes.
 
 The number of ways to pair $k$ distinguishable objects one-to-one with $k$ distinguishable places is
@@ -616,9 +637,14 @@ That two such different descriptions land on the same number is not a coincidenc
 
 This section asks a **different question**: not *"what happens at other orders?"* — that is settled — but *"what happens if we leave the Standard Power Base altogether?"*
 
-Recall from §2.1 and §4.2 that a Base String is specified by **two** independent pieces of information: the order $k$, and the Prime-generating function $f$. §9 varied $k$ while holding the Standard Power Base fixed. Here we vary the other things.
+Recall from §2.1 and §4.2 that a Base String is specified by **two** pieces of information: the order $k$, and the Prime-generating function $f$. §9 varied $k$ while holding the Standard Power Base fixed. Here we vary other things.
 
-**Changing them does not produce another instance of the Root Theorem. It produces a different Base String, and therefore a different String Tree.**
+**Changing them does not produce another instance of the Root Theorem. It produces a different string, and therefore a different tree.**
+
+> **⚠ A definitional caution, and it matters for reading the rest of this section.**
+> A Base String is *exactly* $B_n = (P_n)^k$ — each Prime value raised to a power. **Question 3 below steps outside that definition**, considering a general polynomial such as $3n^2 + 5n + 7$, which **cannot** be written as $(P_n)^k$ for any Prime String and any order.
+>
+> That is deliberate, because the differencing machinery of §9 does not actually require a Base String — it works on **any polynomial sequence**. But such a sequence is not a Base String, and this document will not call it one.
 
 ## 10.1 Three separate questions
 
@@ -648,49 +674,65 @@ B     0    8   64  216  512
 
 **Yes.** The Root is multiplied by $d^k$. Note that this Prime String is *not* the regular whole-integer string, so this tree is outside the Standard Power Base entirely.
 
-**Question 3 — Does the leading coefficient matter?**
+**Question 3 — Does a multiplier out front matter?** *(This one leaves the Base String definition — see the caution above.)*
 
-Take $B_n = 3n^2 + 5n + 7$, giving $B = (7, 15, 29, 49, 75)$:
-
-```
-B     7   15   29   49   75
-1S       8   14   20   26
-2S          6    6    6       <- ROOT = 6 = 3 x 2!
-```
-
-**Yes.** The Root is multiplied by the leading coefficient $a$. Note also that the $5n$ and $+7$ parts have vanished entirely — **the Root cannot see them.** Note too that this Base String is a general polynomial rather than a pure power, so again we are outside the Standard Power Base.
-
-## 10.2 The combined law
-
-Putting the three together:
-
-> ### The General Root Law
-> For a Base String that is a polynomial of degree $k$ with leading coefficient $a$, built on an arithmetic Prime String of step $d$:
-> $$ R = a \cdot k! \cdot d^{\,k} $$
-
-**Verification of the combined case.** Take $a = 3$, $k = 2$, $d = 2$: the Prime String is $(0,2,4,6,8)$ and $B = 3P^2 = (0, 12, 48, 108, 192)$:
+Take the general polynomial $3n^2 + 5n + 7$, giving the string $(7, 15, 29, 49, 75)$:
 
 ```
-B     0   12   48  108  192
-1S      12   36   60   84
-2S         24   24   24       <- ROOT = 24 = 3 x 2! x 2^2 = 3 x 2 x 4
+      7   15   29   49   75
+        8   14   20   26
+           6    6    6       <- ROOT = 6 = 3 x 2!
 ```
 
-Confirmed exactly.
+**Yes.** The Root is multiplied by 3. Note also that the $5n$ and $+7$ parts have vanished entirely — **the Root cannot see them.**
+
+## 10.2 The three answers collapse into one
+
+It is tempting to record the three findings as three separate knobs — a step $d$, a multiplier $a$, an order $k$ — and write $R = a \cdot k! \cdot d^{\,k}$.
+
+**That formula is true, but it is over-parameterised, and seeing why is more instructive than the formula.**
+
+Watch what happens when the scaling is moved from the Prime String into the power:
+
+```
+P = (0,1,2,3,4)  with base operation  x -> (2x)^3   ->  0, 8, 64, 216, 512
+P = (0,2,4,6,8)  with base operation  x -> x^3      ->  0, 8, 64, 216, 512
+```
+
+**These are not analogous. They are the same string, term for term** — and therefore the same tree, the same Root, the same everything. Stepping the Prime String by $2$ and scaling inside the cube are **not two knobs. They are one knob reached from two directions.**
+
+What both are really doing is setting a single number: the **leading coefficient of the string, viewed as a polynomial in the index $n$**. Stepping by $d$ sets it to $d^k$. A multiplier out front sets it to $a$. Doing both sets it to $a \cdot d^k$. In every case the Root responds only to that one number:
+
+> ### The Root Law
+> For any string that is a polynomial of degree $k$ in the index, with leading coefficient $A$:
+> $$ R = A \cdot k! $$
+
+**Checked against every case in this module:**
+
+| String | Leading coefficient $A$ | Predicted $R = A \cdot k!$ | Observed |
+|---|---|---|---|
+| $n^3$ | 1 | $1 \cdot 6 = 6$ | 6 ✔ |
+| $(2n)^3 = 8n^3$ | 8 | $8 \cdot 6 = 48$ | 48 ✔ |
+| $3n^2 + 5n + 7$ | 3 | $3 \cdot 2 = 6$ | 6 ✔ |
+| $3(2n)^2 = 12n^2$ | 12 | $12 \cdot 2 = 24$ | 24 ✔ |
+
+The last row is the combined case that previously needed three parameters. **One number explains all four.**
 
 ## 10.3 How this relates to the Root Theorem
 
-**The General Root Law is an extension into neighbouring territory, not a caveat on §9.** Setting $a = 1$ and $d = 1$ — which is to say, returning to the Standard Power Base — recovers $R = k!$, exactly as §9 proved independently.
+**The Root Law is an extension into neighbouring territory, not a caveat on §9.** Setting $A = 1$ — a monic string, which is what the Standard Power Base always produces — recovers $R = k!$, exactly as §9 proved independently.
 
 The useful reading is not "the Root Theorem is a special case" but:
 
-> **The Root sees exactly three things and is blind to everything else.**
+> **The Root sees exactly two things and is blind to everything else.**
 
 | The Root detects | The Root ignores |
 |---|---|
-| The degree $k$ (via the depth at which it appears) | Every lower-order term |
-| The leading coefficient $a$ | The starting value of the Prime String |
-| The step size $d$ | Everything about the sequence except its top-order behaviour |
+| The degree $k$ — via the depth at which it appears | Every lower-order term |
+| The leading coefficient $A$ — via $R / k!$ | The starting value of the Prime String |
+| | *How* $A$ was arrived at: step, multiplier, or both |
+
+That last row is the point of §10.2. **The Root cannot tell you whether a leading coefficient of 8 came from cubing a step-2 string or from multiplying a cube by 8** — because there is no difference between those two strings to detect.
 
 That blindness is what makes the Root useful as an *instrument*, which is the subject of §11.
 
@@ -698,14 +740,14 @@ That blindness is what makes the Root useful as an *instrument*, which is the su
 
 # 11. Reading a String Tree Backwards
 
-The General Root Law turns the String Tree into a diagnostic instrument. Given a sequence of numbers with **no formula supplied**, you can build its tree and read the formula's top-order structure directly off the bottom.
+The Root Law turns the String Tree into a diagnostic instrument. Given a sequence of numbers with **no formula supplied**, you can build its tree and read the formula's top-order structure directly off the bottom.
 
 ## 11.1 The procedure
 
 1. Difference the sequence repeatedly, recording each substring.
 2. Stop when a level goes constant. That level is the Root.
 3. **The depth at which it went constant is the degree $k$.**
-4. **The Root value divided by $k!$ is the leading coefficient $a$** (assuming step $d = 1$).
+4. **The Root value divided by $k!$ is the leading coefficient $A$.** No further assumption is required — this is $R = A \cdot k!$ read backwards.
 
 ## 11.2 Worked example
 
@@ -746,11 +788,11 @@ This is a factorial expressed with **no multiplication chain at all** — only p
 
 ## 12.2 The factorial as a step-stripped Root
 
-From the General Root Law, with an arithmetic Prime String of step $d$:
+From the Root Law, for any polynomial string of degree $k$ with leading coefficient $A$:
 
-$$ k! \;=\; \frac{R}{d^{\,k}} $$
+$$ k! \;=\; \frac{R}{A} $$
 
-The factorial here is what remains of the Root once the step has been divided out.
+The factorial here is what remains of the Root once the leading coefficient has been divided out. In the special case of a step-$d$ Prime String raised to the $k$-th power, $A = d^{\,k}$ and this reads $k! = R / d^{\,k}$.
 
 ## 12.3 The factorial via the falling product
 
@@ -816,7 +858,7 @@ The Root String is $2S^{2|f} = (2,2,2,2,\ldots)$ and the Terminator String is $3
 
 $$ (9,\,4,\,12,\,3) \;\longrightarrow\; [-\,|\,5],\; [+\,|\,8],\; [-\,|\,9] $$
 
-**Exercise 3.** Prediction from the General Root Law: $R = a \cdot k! \cdot d^k = 1 \cdot 2! \cdot 3^2 = 18$.
+**Exercise 3.** Squaring a step-3 Prime String gives $(3n)^2 = 9n^2$, so the leading coefficient is $A = 9$. Prediction from the Root Law: $R = A \cdot k! = 9 \cdot 2! = 18$.
 
 With $P = (0,3,6,9,12)$ and $B = (0,9,36,81,144)$:
 
@@ -912,7 +954,8 @@ A better use of the same effort: build a few tables, compute a few cases by the 
 |---|---|---|
 | **Root Theorem** | $kS^{\,k|f} = k!$ for the Standard Power Base, **all $k \ge 0$** | **Theorem** — two independent proofs, §9.5 and §9.6; checked at $k = 0 \ldots 10$ by two methods |
 | Terminator | $(k+1)S^{\,k|f} = 0$ | **Theorem** (§9.5) |
-| General Root Law | $R = a \cdot k! \cdot d^{\,k}$ | **Theorem** (§9.5 + §10) |
+| Root Law | $R = A \cdot k!$, $A$ the leading coefficient | **Theorem** (§9.5 + §10) |
+| Step and multiplier are one knob | Scaling inside the power and stepping the Prime String give the *same string* | **Theorem** (§10.2, verified term-by-term) |
 | Seed independence | The Root does not depend on the Prime String's starting value | **Theorem** |
 | Alternating sum | $k! = \sum_j (-1)^{k-j}\binom{k}{j} j^k$ | **Theorem** (§9.6) |
 | Split irreversibility | Magnitude alone cannot reconstruct the parent | **Theorem** (counterexamples, §6.3) |
@@ -933,6 +976,14 @@ And then the question that makes the whole subject interesting: **is there a seq
 ---
 
 # 16. Revision History
+
+**Version 3.** A second full runthrough, directed after Version 2 was published. Five defects found, all in Version 2, all introduced by this document rather than inherited from any source.
+
+1. **§10.2 — the law was over-parameterised.** Version 2 gave $R = a \cdot k! \cdot d^{\,k}$, presenting the step $d$ and the multiplier $a$ as independent knobs. **They are not.** Scaling inside the power and stepping the Prime String produce *the same string, term for term* — verified directly. Both merely set the leading coefficient. The law is now $R = A \cdot k!$, with the three-parameter form shown as a decomposition rather than the statement.
+2. **§10 — a definitional error.** Version 2 called $3n^2 + 5n + 7$ a "Base String". **It is not one:** a Base String is exactly $(P_n)^k$, and no Prime String and order produce that polynomial. The differencing machinery works on any polynomial sequence, but such a sequence is not a Base String and this document no longer calls it one. A caution now appears before the section that needs it.
+3. **§9.6 — the inclusion–exclusion step was asserted rather than shown**, which made it the one unverifiable link in an otherwise checkable proof. A complete worked case at $k = 2$ is now given: all four placements listed, the inclusion–exclusion performed, and the formula evaluated, all three agreeing.
+4. **§2.1, §2.2 — the order $k$ was described loosely** as "an operation of order $k$". It is a power: $B_n = (P_n)^k$. The vaguer phrasing is what previously invited the misreading that a general function slot sits behind the notation.
+5. **§2.2 — index versus position was never pinned down.** Since indexing begins at $n = 0$, "the 4th term" is ambiguous. The syllabus now says **index** throughout, with $B^{2}(4) = 16$ given as the worked reading.
 
 **Version 2.**
 
