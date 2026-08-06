@@ -2,14 +2,14 @@
 title: "String Mathematics — Module 3"
 subtitle: "Tuned Comparisons, Locating Damage, and the Minimum a Tree Remembers"
 author: "Prime Framework — Syllabus-Learning Series"
-date: "Module 3 of the String Mathematics syllabus — Version 1"
+date: "Module 3 of the String Mathematics syllabus — Version 2"
 ---
 
 # Module 3 — Tuning the Comparison
 
 ## One Relationship That Contains Both Lineages, and Two Things a String Tree Knows About Itself
 
-**Version 1.** Prerequisite: Modules 1 and 2.
+**Version 2.** Prerequisite: Modules 1 and 2.
 
 ---
 
@@ -342,6 +342,25 @@ Here is one. It is crude and it beats judgement.
 
 **Three lists identical, one disjoint. Honest count: two independent arguments, not four.**
 
+## 7.1 The same problem when counting evidence, not proofs
+
+The procedure above compares *arguments*. The identical failure occurs when counting *evidence*, and there it has a one-line test.
+
+Suppose several independent mechanisms all point at one conclusion. **It is tempting to count them as several pieces of evidence. Usually they are one.**
+
+> ### Test before counting
+> **Is this a new *look* at the world, or a second *story* about the same look?**
+> **Only the first goes in the tally.**
+
+- **Independent observations add weight.** Two people running two different tests on the same object have genuinely looked twice.
+- **Independent mechanisms explaining one observation add robustness, not weight.** The conclusion survives if one explanation is wrong — which is worth something — but **you have not seen anything twice.**
+
+**Robustness and weight are different quantities, and a narrative runs them together**: describing one event through two mechanisms makes it feel like two events. The test above is what separates them, and it can be applied in the moment rather than reconstructed afterwards.
+
+*This section exists because the author of this syllabus committed exactly that error while arguing an unrelated point, described a single bad outcome through two different failure mechanisms, and reported the result as if it were two findings.*
+
+## 7.2 A note on the two halves
+
 **The refinement that only appears once you write the lists out:** the *same tool* can be dependent for one purpose and independent for another. Operator algebra used to prove the theorem directly leans on the polynomial premise; operator algebra used only to establish the collapse formula (Module 1 §9.6.1) does not, because that identity holds for every string whatsoever. **The tool is not the unit of analysis. The premise is.**
 
 ---
@@ -439,4 +458,4 @@ Three threads remain open, and they are named here rather than promised.
 
 ---
 
-*End of Module 3, Version 1.*
+*End of Module 3, Version 2.*
