@@ -2,14 +2,14 @@
 title: "String Mathematics — Module 1"
 subtitle: "Foundations: Strings, Trees, the Root, and the Factorial"
 author: "Prime Framework — Syllabus-Learning Series"
-date: "Module 1 of the String Mathematics syllabus — Version 5"
+date: "Module 1 of the String Mathematics syllabus — Version 6"
 ---
 
 # Module 1 — Foundations
 
 ## Strings, String Trees, the Root, and the Factorial
 
-**Version 5.** See §16 for the revision history.
+**Version 6.** See §16 for the revision history.
 
 ---
 
@@ -19,10 +19,10 @@ date: "Module 1 of the String Mathematics syllabus — Version 5"
 
 This module assumes **no mathematics beyond a first course in high-school algebra**. If you can square a number, subtract one number from another, and read a table, you have everything you need for §1 through §8.
 
-Only two sections — the proofs in §9.5 and §9.6 — use tools from later in high school (the binomial theorem, and elementary counting). Both are clearly marked. Two short asides mention calculus (§9.8, §12.3); both are marked as asides and **nothing depends on them.**
+Two sections use tools from later in high school and are clearly marked: §9.5 uses the **binomial theorem**, and §9.6 uses **inclusion–exclusion** — a counting principle, and a genuine step beyond arithmetic, so it is worked out in full at $k=2$ before being used in general. Two short asides mention calculus (§9.8, §12.3); both are marked as asides and **nothing depends on them.**
 
 > ### ⚠ The hard part of this module is not the algebra. It is §2.
-> **Two readers tested this document, from very different backgrounds. Both went back and re-read inside §2. Neither re-read a line of §9.5 for its algebra.**
+> **Two readers tested this document, from very different backgrounds. Both went back and re-read inside §2. Neither re-read a line of §9.5 for its algebra** — and every other place either of them went back turned out, on inspection, to be a **writing** problem rather than a mathematics one: a lemma left unstated, a citation loop, a compressed argument, an aside that broke a promise made in this very section.
 >
 > §2 presents a **six-position symbol** — a depth, a core letter, two independent superscripts, a pre-superscript and an index — **before any mathematics has been done at all**, and so before you have anything to attach it to. That is a **notation load**, not an algebra load, and it is the genuine difficulty spike in this module.
 >
@@ -540,6 +540,12 @@ We have now seen the result hold eleven times, across two independent methods, w
 A table of confirmations can only ever tell you that a claim held *in the cases you checked*. It cannot tell you what happens at $k = 11$, or $k = 1000$. To claim the result holds for **all** $k$ — which is what the theorem says — we need an argument that does not depend on which $k$ we picked.
 
 > **One counterexample can destroy a universal claim outright. No number of confirming examples can establish one.** The two directions are not symmetric, and treating them as if they were is one of the most common errors in mathematical reasoning.
+
+**The same asymmetry has a second face, and it catches people who would never fall for the first.** Suppose you check part of something and find nothing wrong. What have you learned?
+
+> **A sample can prove presence. It can never prove absence.** Finding one error in the part you examined proves the whole contains an error. Finding *no* error in the part you examined proves nothing whatever about the part you did not.
+
+**This is the same rule as above, seen from the other end**: "there is no counterexample here" is a universal claim about the region you searched, and it is only as large as that region. **State the region.** A check that does not say what it covered cannot be told apart from one that covered everything.
 
 So: the eleven checks are the *evidence*. What follows are the *warrants*.
 
@@ -1065,6 +1071,16 @@ And then the question that makes the whole subject interesting: **is there a seq
 
 # 16. Revision History
 
+**Version 6.** Three refinements arising from a reader adjudicating his own evidence against himself.
+
+1. **§0.1 mis-named a tool.** It described §9.6 as using "elementary counting". **Inclusion–exclusion at general $k$ is not elementary counting** — it is a genuine step beyond arithmetic, and calling it elementary set a reader up to expect less than the section delivers. Now named correctly, with a pointer to the fully worked $k=2$ case.
+2. **The §0.1 difficulty note gained its third data point.** Both testing readers went back inside §2 and neither re-read §9.5 for its algebra. The third case — one reader re-reading §12.3 — was **a promise violation rather than an algebra load**: the aside required calculus that §0.1 had said would not be required. **Every place either reader went back turned out to be a writing problem, not a mathematics one.** §0.1 now says so.
+3. **§9.4 gained the second face of its own asymmetry.** The section already argued that no number of confirmations establishes a universal. It did not state the dual: **a sample can prove presence, but never absence.** A check that finds nothing wrong in the part it examined has established nothing about the part it did not — so **a check must state the region it covered**, or it cannot be told apart from one that covered everything.
+
+**On where item 3 came from, since the provenance is the point.** One reviewer sampled the first sixty lines of the other's three-hundred-and-forty-seven-line return in order to copy its format, and then asserted a universal negative about the remaining eighty-three per cent. **He caught it himself, reported it without defence, and named the mechanism in one line.** The rule now in §9.4 is his, and it belongs in a module about the difference between checking and proving.
+
+**One adjudication recorded rather than assumed.** One reader flagged §9.6's inclusion–exclusion clause as compressed; whether that counted as a *writing* failure or a *mathematics* failure would have decided a disputed point in the other reader's favour, and **that reader explicitly declined to settle it in his own interest and referred it to the author.** Ruling, with the evidence: **compression.** He reconstructed the inclusion–exclusion himself and verified the signs at $k=2$ and $k=3$ — *a reader who successfully performs the mathematics was not stopped by the mathematics.* The compression was repaired in Version 4; §0.1's mis-naming of the tool, which the same case exposed, is repaired here.
+
 **Version 5.** The XO refiled his return to the requested specification — *where a reader went back*, rather than a review — and it carried findings his first return had not.
 
 1. **§0.1 was measuring the wrong axis, and this is the most useful thing either reader returned.** §0.1 flagged §9.5 and §9.6 as the hard sections, on the grounds that they use the binomial theorem and elementary counting. **But both readers went back and re-read inside §2, and neither re-read §9.5 for its algebra.** The difficulty spike is a **notation load** — a six-position symbol presented before any mathematics has been done, so before the reader has anything to attach it to. §0.1 now says so, and tells the reader to skim §2 and return to it after §8, since §3–§8 need only $P$, $B$ and $jS$.
@@ -1118,4 +1134,4 @@ Changes from Version 1, all in response to a directive to verify the Root Theore
 
 ---
 
-*End of Module 1, Version 5.*
+*End of Module 1, Version 6.*
