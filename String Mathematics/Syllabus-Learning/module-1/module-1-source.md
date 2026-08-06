@@ -2,14 +2,14 @@
 title: "String Mathematics — Module 1"
 subtitle: "Foundations: Strings, Trees, the Root, and the Factorial"
 author: "Prime Framework — Syllabus-Learning Series"
-date: "Module 1 of the String Mathematics syllabus — Version 7"
+date: "Module 1 of the String Mathematics syllabus — Version 8"
 ---
 
 # Module 1 — Foundations
 
 ## Strings, String Trees, the Root, and the Factorial
 
-**Version 7.** See §16 for the revision history.
+**Version 8.** See §16 for the revision history.
 
 ---
 
@@ -74,7 +74,7 @@ $$ {}^{X}\!jS^{\,k\,|\,f}_{\;n} $$
 Each position means something specific:
 
 | Position | Symbol | Name | What it tells you |
-|---|---|---|---|
+|---------------|-----|--------------------------|-----------------------------------------------------|
 | Leading number | $j$ | **Lineage depth** | How many generations below the Base String this string sits |
 | Core letter | $S$ | **String** | The object itself |
 | Superscript left | $k$ | **Order** | The power each Prime value is raised to: $B_n = (P_n)^k$ |
@@ -89,7 +89,7 @@ So the symbol $2S^{3|f}_{4}$ reads:
 **The English runs in the opposite direction to the symbol, so read them against each other the first time.** The symbol puts depth first and index last; the sentence starts at the index and works outward:
 
 | Phrase in the sentence | Comes from |
-|---|---|
+|-----------------------------------------------------|-----------------------------------------------|
 | "the term at index 4" | the **subscript** $n$ |
 | "of the second substring" | the **leading number** $j$ |
 | "of the Base String of order 3" | the **left superscript** $k$ |
@@ -102,7 +102,7 @@ So the symbol $2S^{3|f}_{4}$ reads:
 Three strings have their own symbols, because they are referred to constantly:
 
 | Symbol | Name | Definition |
-|---|---|---|
+|---------------|---------------|-----------------------------------------------------------------------|
 | $P^{f}$ | **Prime String** | The generating sequence: a seed value and a rule $f$ applied repeatedly |
 | $B^{\,k\,|\,f}$ | **Base String** | Each Prime value raised to the $k$-th power: $B_n = (P_n)^k$ |
 | $jS^{\,k\,|\,f}$ | **Substring** | A child string, built from relationships between adjacent terms of its parent |
@@ -165,7 +165,7 @@ This is called the **regular whole-integer Prime String**.
 The definition permits any rule at all. Three worth meeting now:
 
 | Rule $f$ | Seed | Prime String | Name |
-|---|---|---|---|
+|-------------|-------|----------------------------------------------|----------------------------------|
 | $x + 1$ | 0 | $0, 1, 2, 3, 4, 5, \ldots$ | Regular whole-integer |
 | $x + d$ | 0 | $0, d, 2d, 3d, 4d, \ldots$ | Arithmetic, step $d$ |
 | $2x$ | 1 | $1, 2, 4, 8, 16, 32, \ldots$ | Geometric, ratio 2 |
@@ -203,7 +203,7 @@ These are the cubes. Nothing more complicated is required for anything that foll
 To be completely explicit, here is the construction of $B^{3|f}$ from the ground up:
 
 | $n$ | Prime value $P_n$ | Base operation | Base value $B_n$ |
-|---|---|---|---|
+|------|----------------------------------|----------------------------|--------------------------------|
 | 0 | 0 | $0^3$ | 0 |
 | 1 | 1 | $1^3$ | 1 |
 | 2 | 2 | $2^3$ | 8 |
@@ -247,7 +247,7 @@ $$ {}^{C}\!jS^{\,k\,|\,f}_n = h\left((j-1)S^{\,k\,|\,f}_n,\; (j-1)S^{\,k\,|\,f}_
 Here $h$ is the comparative relationship. It may be any operation taking two or more inputs:
 
 | Relationship | Definition |
-|---|---|
+|-----------------------------------------------|-----------------------------------------------------|
 | **Difference** | $h(a,b) = b - a$ |
 | **Sum** | $h(a,b) = a + b$ |
 | **Product** | $h(a,b) = ab$ |
@@ -262,7 +262,7 @@ Note that a comparative substring is **one term shorter** than its parent, becau
 Take $B^{3|f} = (0, 1, 8, 27, 64, 125)$ and apply $h(a,b) = b - a$ to each adjacent pair:
 
 | Pair | Calculation | Result |
-|---|---|---|
+|---------------------------------------|---------------------------------------|---------------------|
 | $(0, 1)$ | $1 - 0$ | 1 |
 | $(1, 8)$ | $8 - 1$ | 7 |
 | $(8, 27)$ | $27 - 8$ | 19 |
@@ -290,7 +290,7 @@ The magnitude is an **absolute difference** — always zero or positive. The dir
 Take the parent string $(4,\; 1,\; 7)$ and compare adjacent values by difference:
 
 | Pair | Signed difference | Split form |
-|---|---|---|
+|----------------------|-----------------------------------------------|-------------------------------|
 | $(4, 1)$ | $1 - 4 = -3$ | $[-\;|\;3]$ |
 | $(1, 7)$ | $7 - 1 = +6$ | $[+\;|\;6]$ |
 
@@ -382,7 +382,7 @@ $$ (k+1)S^{\,k\,|\,f} = 0 \qquad \text{(the Terminator String)} $$
 ## 8.2 The canonical example — the cubic String Tree
 
 | Level | Notation | Values |
-|---|---|---|
+|---------------------------|--------------------|-----------------------------------------------------|
 | Base String | $B^{\,3\,|\,f}$ | $0,\; 1,\; 8,\; 27,\; 64,\; 125,\; \ldots$ |
 | First Substring | $1S^{\,3\,|\,f}$ | $1,\; 7,\; 19,\; 37,\; 61,\; \ldots$ |
 | Second Substring | $2S^{\,3\,|\,f}$ | $6,\; 12,\; 18,\; 24,\; \ldots$ |
@@ -647,7 +647,7 @@ Count them by inclusion–exclusion. There are $j^k$ ways to place $k$ balls int
 Two balls $\{1, 2\}$, two boxes $\{A, B\}$. All possible placements:
 
 | Placement | ball 1 goes in | ball 2 goes in | every box used? |
-|---|---|---|---|
+|-----------------|---------------------------|---------------------------|-----------------------------|
 | 1 | A | A | no — B is empty |
 | 2 | A | B | **yes** |
 | 3 | B | A | **yes** |
@@ -678,7 +678,7 @@ It is natural to want several confirmations of an important result, and natural 
 While preparing this module, **four** separate proofs of the Root Theorem were assembled. Here they are with the premise each one actually leans on:
 
 | # | Argument | Premise it rests on | Independent? |
-|---|---|---|---|
+|---|------------------------------------------------|---------------------------------|-----------------|
 | 1 | Descent of degree (§9.5) | how differencing acts on polynomials | — |
 | 2 | Change of basis into falling products | how differencing acts on polynomials | **no — same as 1** |
 | 3 | Operator algebra, used to prove the theorem directly | how differencing acts on polynomials | **no — same as 1** |
@@ -798,7 +798,7 @@ What both are really doing is setting a single number: the **leading coefficient
 **Checked against every case in this module:**
 
 | String | Leading coefficient $A$ | Predicted $R = A \cdot k!$ | Observed |
-|---|---|---|---|
+|-----------------------|-------------------------------|-----------------------------------|-----------|
 | $n^3$ | 1 | $1 \cdot 6 = 6$ | 6 ✔ |
 | $(2n)^3 = 8n^3$ | 8 | $8 \cdot 6 = 48$ | 48 ✔ |
 | $3n^2 + 5n + 7$ | 3 | $3 \cdot 2 = 6$ | 6 ✔ |
@@ -815,7 +815,7 @@ The useful reading is not "the Root Theorem is a special case" but:
 > **The Root sees exactly two things and is blind to everything else.**
 
 | The Root detects | The Root ignores |
-|---|---|
+|--------------------------------------------------|--------------------------------------------------|
 | The degree $k$ — via the depth at which it appears | Every lower-order term |
 | The leading coefficient $A$ — via $R / k!$ | The starting value of the Prime String |
 | *(nothing else — the list is complete at two)* | *How* $A$ was arrived at: step, multiplier, or both |
@@ -943,7 +943,7 @@ The Root String is $2S^{2|f} = (2,2,2,2,\ldots)$ and the Terminator String is $3
 **Exercise 2.**
 
 | Pair | Signed difference | Split |
-|---|---|---|
+|----------------------|-----------------------------------------------|-------------------------------|
 | $(9,4)$ | $-5$ | $[-\,|\,5]$ |
 | $(4,12)$ | $+8$ | $[+\,|\,8]$ |
 | $(12,3)$ | $-9$ | $[-\,|\,9]$ |
@@ -1011,7 +1011,7 @@ A better use of the same effort: build a few tables, compute a few cases by the 
 ## 14.1 Terms
 
 | Term | Meaning |
-|---|---|
+|----------------------|------------------------------------------------------------------------------|
 | **Prime String** | The generating sequence: a seed and a rule $f$ applied recursively |
 | **Prime-generating function** | The rule $f$ that produces each Prime value from the previous one |
 | **Base String** | The Prime String with an order-$k$ operation applied pointwise to each term |
@@ -1029,7 +1029,7 @@ A better use of the same effort: build a few tables, compute a few cases by the 
 ## 14.2 Notation
 
 | Symbol | Meaning |
-|---|---|
+|-----------------------------------------------|-----------------------------------------------------|
 | $P^{f}$ | Prime String generated by $f$ |
 | $B^{\,k\,|\,f}$ | Base String of order $k$ over $P^f$ |
 | $jS^{\,k\,|\,f}$ | The $j$-th substring |
@@ -1045,7 +1045,7 @@ A better use of the same effort: build a few tables, compute a few cases by the 
 ## 14.3 Key results
 
 | Result | Statement | Status |
-|---|---|---|
+|----------------|--------------------------------------|-----------------------------------------------|
 | **Root Theorem** | $kS^{\,k|f} = k!$ for the Standard Power Base, **all $k \ge 0$** | **Theorem** — two independent proofs, §9.5 and §9.6; checked at $k = 0 \ldots 10$ by two methods |
 | Terminator | $(k+1)S^{\,k|f} = 0$ | **Theorem** (§9.5) |
 | Root Law | $R = A \cdot k!$, $A$ the leading coefficient | **Theorem** (§9.5 + §10) |
@@ -1070,6 +1070,11 @@ And then the question that makes the whole subject interesting: **is there a seq
 ---
 
 # 16. Revision History
+
+**Version 8.** **Column widths.** The table audit in the previous version corrected blank headings but left a second fault untouched, because it examined the *source* rather than the *rendered document*. **Every table was being given equal column widths** — a uniform separator row carries no width information, so the converter divided the page evenly regardless of content. A column holding one symbol received the same space as one holding a full sentence, which crushed the long columns and left equations without room to display. **All 35 tables now carry separator widths proportional to their actual content.**
+
+*The source was correct throughout. What was wrong was the space the content was given to appear in — which is why a check on the source could not find it.*
+
 
 **Version 7.** **Table audit.** Every table in this module was checked for blank cells and for rows whose width did not match their header. **The fault found was blank column headings** — a column with no heading reads as missing information, and in a rendered document it simply appears empty. All are now labelled.
 
@@ -1140,4 +1145,4 @@ Changes from Version 1, all in response to a directive to verify the Root Theore
 
 ---
 
-*End of Module 1, Version 7.*
+*End of Module 1, Version 8.*

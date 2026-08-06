@@ -2,14 +2,14 @@
 title: "String Mathematics — Module 3"
 subtitle: "Tuned Comparisons, Locating Damage, and the Minimum a Tree Remembers"
 author: "Prime Framework — Syllabus-Learning Series"
-date: "Module 3 of the String Mathematics syllabus — Version 3"
+date: "Module 3 of the String Mathematics syllabus — Version 4"
 ---
 
 # Module 3 — Tuning the Comparison
 
 ## One Relationship That Contains Both Lineages, and Two Things a String Tree Knows About Itself
 
-**Version 3.** Prerequisite: Modules 1 and 2. See §11 for the revision history.
+**Version 4.** Prerequisite: Modules 1 and 2. See §11 for the revision history.
 
 ---
 
@@ -115,7 +115,7 @@ B          0    2    8   24   64  160
 Each entry, computed:
 
 | Level | Working, entry by entry |
-|---|---|
+|------------|----------------------------------------------------------------------------------------|
 | $1S_{(2)}$ | $2-2(0)=2$ · $8-2(2)=4$ · $24-2(8)=8$ · $64-2(24)=16$ · $160-2(64)=32$ |
 | $2S_{(2)}$ | $4-2(2)=0$ · $8-2(4)=0$ · $16-2(8)=0$ · $32-2(16)=0$ |
 
@@ -154,7 +154,7 @@ Take the string that broke the ratio lineage — $0, 2, 8, 24, 64, 160$ — wher
 ## 3.4 The picture
 
 | Tuning | Terminates on | Depth | Known as |
-|---|---|---|---|
+|-------------------------|------------------------------|------|---------------------------------------|
 | $r = 1$ | polynomials of degree $k$ | $k+1$ | the difference lineage (Module 1) |
 | any $r$, $p$ constant | geometrics with ratio $r$ | $1$ | the ratio test (Module 2) |
 | any $r$, $\deg p = k$ | polynomial × geometric | $k+1$ | **this module** |
@@ -234,7 +234,7 @@ B'     0    1    8   37   64  125  216
 Set that beside the clean tree from Module 1 and subtract:
 
 | Level | Clean | Corrupted | **Deviation** |
-|---|---|---|---|
+|-------|-------------------------------|-------------------------------|-------------------------------|
 | $1S$ | $1, 7, 19, 37, 61, 91$ | $1, 7, 29, 27, 61, 91$ | $0, 0, +10, -10, 0, 0$ |
 | $2S$ | $6, 12, 18, 24, 30$ | $6, 22, -2, 34, 30$ | $0, +10, -20, +10, 0$ |
 | $3S$ | $6, 6, 6, 6$ | $16, -24, 36, -4$ | $+10, -30, +30, -10$ |
@@ -295,7 +295,7 @@ $$ B_n \;=\; \sum_{j} \binom{n}{j}\,\bigl(jS_0\bigr) $$
 **Checked by hand:**
 
 | $n$ | $0\binom{n}{0} + 1\binom{n}{1} + 6\binom{n}{2} + 6\binom{n}{3}$ | Result | $n^3$ |
-|---|---|---|---|
+|----|----------------------------------------------------------------------------------|--------|------|
 | 3 | $0 + 3 + 6(3) + 6(1)$ | $27$ | 27 ✔ |
 | 4 | $0 + 4 + 6(6) + 6(4)$ | $64$ | 64 ✔ |
 | 5 | $0 + 5 + 6(10) + 6(10)$ | $125$ | 125 ✔ |
@@ -334,7 +334,7 @@ Here is one. It is crude and it beats judgement.
 **Worked on this syllabus's own material** — the four arguments assembled for the Root Theorem:
 
 | Argument | Premise it uses | Independent? |
-|---|---|---|
+|-----------------------------------|-----------------------------------------|------------------------|
 | Descent of degree | how differencing acts on polynomials | — (the baseline) |
 | Falling-product basis | how differencing acts on polynomials | **no — same premise** |
 | Operator algebra, used directly | how differencing acts on polynomials | **no — same premise** |
@@ -422,18 +422,18 @@ Hmm — the clean row has five entries and the corrupted row has six, so **they 
 # 9. Glossary, Notation, and Status
 
 | Symbol | Meaning |
-|---|---|
+|----------------------------|------------------------------------------------------------------------|
 | $h_r(a,b) = b - r\,a$ | The **tuned difference**, with tuning $r$ |
 | $jS_{(r)}$ | The $j$-th substring under the tuned difference at $r$ |
 
 | Term | Meaning |
-|---|---|
+|------------------|----------------------------------------------------------------------------------|
 | **Tuning** | The dial $r$ in $b - r\,a$; the geometric ratio the comparison is blind to |
 | **Damage wedge** | The signed-binomial pattern a single corrupted term produces below itself |
 | **Left edge** | The first entry of each level; the minimal data that rebuilds a tree |
 
 | Result | Status |
-|---|---|
+|------------------------------------------------------|----------------------------------------------|
 | $h_r$ passes through a geometric and differences the polynomial | **Theorem** (§2.3) |
 | Tuned Root Theorem: termination at depth $k+1$ | **Theorem** (§2.4), checked at $n2^n$ and $(n{+}1)3^n$ |
 | $h_1$ is Module 1; degree-zero $h_r$ is Module 2 | **Theorem** (§3.1–§3.2) |
@@ -460,6 +460,11 @@ Three threads remain open, and they are named here rather than promised.
 
 # 11. Revision History
 
+**Version 4.** **Column widths.** The table audit in the previous version corrected blank headings but left a second fault untouched, because it examined the *source* rather than the *rendered document*. **Every table was being given equal column widths** — a uniform separator row carries no width information, so the converter divided the page evenly regardless of content. A column holding one symbol received the same space as one holding a full sentence, which crushed the long columns and left equations without room to display. **All 35 tables now carry separator widths proportional to their actual content.**
+
+*The source was correct throughout. What was wrong was the space the content was given to appear in — which is why a check on the source could not find it.*
+
+
 **Version 3.** **Table audit.** Every table in this module was checked for blank cells and for rows whose width did not match their header. **The fault found was blank column headings** — a column with no heading reads as missing information, and in a rendered document it simply appears empty. All are now labelled.
 
 *Method note, since it matters more than the fix:* the first hypothesis was that a `|` inside mathematics was splitting cells, which would have been a serious and silent corruption. **That was checked against the rendered document and proved false** — the converter's cell-splitter is mathematics-aware. Had the fix been applied on the hypothesis rather than on the evidence, it would have mangled every notation in the syllabus to solve a problem that did not exist.
@@ -472,4 +477,4 @@ Two tables corrected: §2.5's working table had **both** column headings blank (
 
 ---
 
-*End of Module 3, Version 3.*
+*End of Module 3, Version 4.*
