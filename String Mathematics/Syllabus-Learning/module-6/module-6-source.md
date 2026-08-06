@@ -2,14 +2,14 @@
 title: "String Mathematics — Module 6"
 subtitle: "Digit Sets: Redundancy, Carry-Free Arithmetic, and Why Three"
 author: "Prime Framework — Syllabus-Learning Series"
-date: "Module 6 of the String Mathematics syllabus — Version 1"
+date: "Module 6 of the String Mathematics syllabus — Version 2"
 ---
 
 # Module 6 — Digit Sets
 
 ## Redundancy, Carry-Free Arithmetic, and Why Three
 
-**Version 1.** Prerequisite: Modules 1 and 4.
+**Version 2.** Prerequisite: Modules 1 and 4.
 
 ---
 
@@ -103,13 +103,13 @@ At radix 3 with bound 2 the digit set holds five values against a radix of three
 
 ## 4.2 The proof, and it is three lines
 
-Suppose some digit is not zero. Let *p* be the **highest** position holding a nonzero digit. That digit contributes at least `r^p^` in size. Everything beneath it contributes at most
+Suppose some digit is not zero. Let *p* be the **highest** position holding a nonzero digit. That digit contributes at least r^p^ in size. Everything beneath it contributes at most
 
 ```
 a·r^0^  +  a·r^1^  +  …  +  a·r^(p−1)^   =   a·(r^p^ − 1)/(r − 1)
 ```
 
-and since `a ≤ r − 1`, that whole tail is at most `r^p^ − 1`.
+and since `a ≤ r − 1`, that whole tail is at most r^p^ − 1.
 
 **So the top digit outweighs everything below it, with at least 1 to spare:**
 
@@ -411,7 +411,7 @@ result (0, 0, 1) = 9
 
 Module 1's cubic tree has first substring 1, 7, 19, … ✔ — and note `−2` is inside the digit set, so no reduction was needed.
 
-**Exercise 7.** **A position must hold a wider and wider range of values.** Each level of differencing can double the digit bound, so after *k* levels a position may need to hold values of order `2^k^` times the original bound — and any real register with a fixed number of symbols per position eventually cannot. **Reduction is what makes the depth of the tree independent of the width of a position.**
+**Exercise 7.** **A position must hold a wider and wider range of values.** Each level of differencing can double the digit bound, so after *k* levels a position may need to hold values of order 2^k^ times the original bound — and any real register with a fixed number of symbols per position eventually cannot. **Reduction is what makes the depth of the tree independent of the width of a position.**
 
 **Exercise 8.** Because **uniqueness is only ever needed where recognition is needed.** The Root is a value to be read once, at the end, by whoever wants it; the Terminator is a condition the process must test for itself, repeatedly, without reading anything. §4 supplies uniqueness exactly at zero and nowhere else — which is exactly the distribution required.
 
@@ -465,6 +465,13 @@ Module 1's cubic tree has first substring 1, 7, 19, … ✔ — and note `−2` 
 
 **Older threads still open**, restated so they do not drift: composite tunings where a ratio repeats (Module 3 §10), and whether more than one error can be corrected rather than merely located (Module 3 §5.5, §6.3).
 
+# Revision History
+
+**Version 2.** **Notation rendering.** Notation written inside code spans was displaying as raw markup — a superscript marker appearing as a literal character instead of raising the symbol — and the escape before a vertical bar was visible as a backslash. **A code span suppresses exactly the formatting the notation needs.** All affected notation now renders as true superscripts and subscripts. Verified in the document's own markup rather than in a text extraction, because a text extraction flattens a superscript and cannot tell a rendered one from a broken one.
+
+
+**Version 1.** Initial issue.
+
 ---
 
-*End of Module 6, Version 1.*
+*End of Module 6, Version 2.*

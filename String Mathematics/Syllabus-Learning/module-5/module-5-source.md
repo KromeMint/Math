@@ -2,14 +2,14 @@
 title: "String Mathematics — Module 5"
 subtitle: "Sum and Product: Completing the Four Relationships"
 author: "Prime Framework — Syllabus-Learning Series"
-date: "Module 5 of the String Mathematics syllabus — Version 1"
+date: "Module 5 of the String Mathematics syllabus — Version 2"
 ---
 
 # Module 5 — Sum and Product
 
 ## Completing the Four Relationships, and the Family They Turn Out to Be
 
-**Version 1.** Prerequisite: Modules 1, 2 and 3. Module 4 is not assumed.
+**Version 2.** Prerequisite: Modules 1, 2 and 3. Module 4 is not assumed.
 
 ---
 
@@ -519,7 +519,7 @@ Check: 9/3² = 1, 81/9² = 1, 6561/81² = 1 → **1, 1, 1** at depth 1. ✔
 
 ## 12.1 No new notation
 
-**This module introduces none.** The sum and product lineages are written exactly as Module 1 §5.3 writes any comparative substring, and the sum lineage may equally be written as Module 3's `jS~(−1)~`.
+**This module introduces none.** The sum and product lineages are written exactly as Module 1 §5.3 writes any comparative substring, and the sum lineage may equally be written as Module 3's jS~(−1)~.
 
 ## 12.2 Terms
 
@@ -565,6 +565,13 @@ Check: 9/3² = 1, 81/9² = 1, 6561/81² = 1 → **1, 1, 1** at depth 1. ✔
 
 **Two threads stay open from earlier modules**, restated so they do not drift: composite tunings where a ratio repeats (Module 3 §10), and whether more than one error can be corrected rather than merely located (Module 3 §5.5 and §6.3).
 
+# Revision History
+
+**Version 2.** **Notation rendering.** Notation written inside code spans was displaying as raw markup — a superscript marker appearing as a literal character instead of raising the symbol — and the escape before a vertical bar was visible as a backslash. **A code span suppresses exactly the formatting the notation needs.** All affected notation now renders as true superscripts and subscripts. Verified in the document's own markup rather than in a text extraction, because a text extraction flattens a superscript and cannot tell a rendered one from a broken one.
+
+
+**Version 1.** Initial issue.
+
 ---
 
-*End of Module 5, Version 1.*
+*End of Module 5, Version 2.*

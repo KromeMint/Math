@@ -2,14 +2,14 @@
 title: "String Mathematics — Module 4"
 subtitle: "Number Without a Base: Counting, Registers, and Where Carrying Actually Lives"
 author: "Prime Framework — Syllabus-Learning Series"
-date: "Module 4 of the String Mathematics syllabus — Version 1"
+date: "Module 4 of the String Mathematics syllabus — Version 2"
 ---
 
 # Module 4 — Number Without a Base
 
 ## Counting, Registers, and Where Carrying Actually Lives
 
-**Version 1.** Prerequisite: Module 1. Modules 2 and 3 are helpful but not assumed.
+**Version 2.** Prerequisite: Module 1. Modules 2 and 3 are helpful but not assumed.
 
 ---
 
@@ -441,7 +441,7 @@ The three layers of a String Tree are three rungs of that ladder:
 
 > **The String Tree is not an arbitrary construction. It is the operations of arithmetic, stacked in the order they are built from one another.**
 
-And the order *k* of a Base String is **not a choice of which operation to use** — it is a count of how many times to repeat one. `B^3^` means multiply the Prime value by itself three times, and each of those multiplications is repeated addition, and each addition is repeated counting. **One act, applied at four depths.**
+And the order *k* of a Base String is **not a choice of which operation to use** — it is a count of how many times to repeat one. B^3^ means multiply the Prime value by itself three times, and each of those multiplications is repeated addition, and each addition is repeated counting. **One act, applied at four depths.**
 
 ## 10.2 What this says about the number base
 
@@ -606,6 +606,13 @@ Module 1's Comparative Split factors a value into a sign and a magnitude — ove
 
 **Two threads stay open from earlier modules**, named again so they are not lost: composite tunings where a ratio repeats (Module 3 §10), and whether more than one error can be corrected rather than merely located (Module 3 §5.5, §6.3).
 
+# Revision History
+
+**Version 2.** **Notation rendering.** Notation written inside code spans was displaying as raw markup — a superscript marker appearing as a literal character instead of raising the symbol — and the escape before a vertical bar was visible as a backslash. **A code span suppresses exactly the formatting the notation needs.** All affected notation now renders as true superscripts and subscripts. Verified in the document's own markup rather than in a text extraction, because a text extraction flattens a superscript and cannot tell a rendered one from a broken one.
+
+
+**Version 1.** Initial issue.
+
 ---
 
-*End of Module 4, Version 1.*
+*End of Module 4, Version 2.*

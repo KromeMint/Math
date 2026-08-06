@@ -182,20 +182,20 @@ The series is built on one principle, which was not planned and became visible o
 
 | Symbol | Meaning | Introduced |
 |---------------------------|----------------------------------------------|---------------------------|
-| `P^f^` | Prime String — a seed and a rule applied repeatedly | 1 §3 |
-| `B^k\|f^` | Base String — each Prime value raised to the power *k* | 1 §4 |
-| `jS^k\|f^` | The *j*-th substring | 1 §5 |
+| P^f^ | Prime String — a seed and a rule applied repeatedly | 1 §3 |
+| B^k\|f^ | Base String — each Prime value raised to the power *k* | 1 §4 |
+| jS^k\|f^ | The *j*-th substring | 1 §5 |
 | `0S = B` | The Base String is the substring of depth zero | 1 §2.3 |
 | `ᴰjS` , `ᶜjS` | Direct and Comparative substrings | 1 §5.2, §5.3 |
-| `[ sign \| magnitude ]` | The Comparative Split | 1 §6 |
-| `R^k^` | The Root String value | 1 §8 |
-| `jS~÷~` | A ratio substring | 2 §2.1 |
-| `[ direction \| factor ]` | The Split in multiplicative form | 2 §5 |
-| `h~r~(a,b) = b − r·a` | The tuned difference, tuning *r* | 3 §2.1 |
-| `jS~(r)~` | Substring under the tuned difference | 3 §2.1 |
+| [ sign \| magnitude ] | The Comparative Split | 1 §6 |
+| R^k^ | The Root String value | 1 §8 |
+| jS~÷~ | A ratio substring | 2 §2.1 |
+| [ direction \| factor ] | The Split in multiplicative form | 2 §5 |
+| h~r~(a,b) = b − r·a | The tuned difference, tuning *r* | 3 §2.1 |
+| jS~(r)~ | Substring under the tuned difference | 3 §2.1 |
 | *r* , *a* | Radix and digit bound | 6 §2 |
 
-**One known weakness, recorded rather than hidden.** The Base String symbol carries the Prime-generating function in every occurrence, and in practice that function almost never varies. **Both readers who tested Module 1 stalled on the six-position symbol and neither stalled on the mathematics.** Dropping to `B^k^` and naming the generating function in prose would cost nothing and remove the series' single largest source of reader friction. **That is a change to the framework's notation and is not made unilaterally here.**
+**One known weakness, recorded rather than hidden.** The Base String symbol carries the Prime-generating function in every occurrence, and in practice that function almost never varies. **Both readers who tested Module 1 stalled on the six-position symbol and neither stalled on the mathematics.** Dropping to B^k^ and naming the generating function in prose would cost nothing and remove the series' single largest source of reader friction. **That is a change to the framework's notation and is not made unilaterally here.**
 
 ---
 

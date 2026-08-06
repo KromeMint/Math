@@ -2,14 +2,14 @@
 title: "String Mathematics — Module 1"
 subtitle: "Foundations: Strings, Trees, the Root, and the Factorial"
 author: "Prime Framework — Syllabus-Learning Series"
-date: "Module 1 of the String Mathematics syllabus — Version 10"
+date: "Module 1 of the String Mathematics syllabus — Version 11"
 ---
 
 # Module 1 — Foundations
 
 ## Strings, String Trees, the Root, and the Factorial
 
-**Version 10.** See §16 for the revision history.
+**Version 11.** See §16 for the revision history.
 
 ---
 
@@ -1071,7 +1071,10 @@ And then the question that makes the whole subject interesting: **is there a seq
 
 # 16. Revision History
 
-**Version 10.** **A regression from Version 9, and it was introduced by that version's own fix.** Converting the mathematics out of embedded equation objects left the notation `B^k|f^` as ordinary text — **and that notation contains a vertical bar, which is the character a table uses to separate its columns.** Inside an equation object the bar had been protected. As plain text it was read as a separator, so every row carrying the notation split into one column too many and its final column was pushed off the end of the table. §2.2, §8.2 and the notation summary were all affected.
+**Version 11.** **Notation rendering.** Notation written inside code spans was displaying as raw markup — a superscript marker appearing as a literal character instead of raising the symbol — and the escape before a vertical bar was visible as a backslash. **A code span suppresses exactly the formatting the notation needs.** All affected notation now renders as true superscripts and subscripts. Verified in the document's own markup rather than in a text extraction, because a text extraction flattens a superscript and cannot tell a rendered one from a broken one.
+
+
+**Version 10.** **A regression from Version 9, and it was introduced by that version's own fix.** Converting the mathematics out of embedded equation objects left the notation B^k|f^ as ordinary text — **and that notation contains a vertical bar, which is the character a table uses to separate its columns.** Inside an equation object the bar had been protected. As plain text it was read as a separator, so every row carrying the notation split into one column too many and its final column was pushed off the end of the table. §2.2, §8.2 and the notation summary were all affected.
 
 The bar is now escaped in the thirteen table rows that carry it, and every table in all three modules has been checked to confirm that no row disagrees with its header on column count.
 
@@ -1161,4 +1164,4 @@ Changes from Version 1, all in response to a directive to verify the Root Theore
 
 ---
 
-*End of Module 1, Version 10.*
+*End of Module 1, Version 11.*
