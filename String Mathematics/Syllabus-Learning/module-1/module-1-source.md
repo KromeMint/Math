@@ -2,14 +2,14 @@
 title: "String Mathematics — Module 1"
 subtitle: "Foundations: Strings, Trees, the Root, and the Factorial"
 author: "Prime Framework — Syllabus-Learning Series"
-date: "Module 1 of the String Mathematics syllabus — Version 4"
+date: "Module 1 of the String Mathematics syllabus — Version 5"
 ---
 
 # Module 1 — Foundations
 
 ## Strings, String Trees, the Root, and the Factorial
 
-**Version 4.** See §16 for the revision history.
+**Version 5.** See §16 for the revision history.
 
 ---
 
@@ -19,7 +19,14 @@ date: "Module 1 of the String Mathematics syllabus — Version 4"
 
 This module assumes **no mathematics beyond a first course in high-school algebra**. If you can square a number, subtract one number from another, and read a table, you have everything you need for §1 through §8.
 
-Only two sections — the proofs in §9.5 and §9.6 — use tools from later in high school (the binomial theorem, and elementary counting). Both are clearly marked. Two short asides mention calculus (§9.8, §12.3); both are marked as asides and **nothing depends on them.** You can skip them on a first reading and lose nothing but the reason the main result is *guaranteed* rather than merely observed.
+Only two sections — the proofs in §9.5 and §9.6 — use tools from later in high school (the binomial theorem, and elementary counting). Both are clearly marked. Two short asides mention calculus (§9.8, §12.3); both are marked as asides and **nothing depends on them.**
+
+> ### ⚠ The hard part of this module is not the algebra. It is §2.
+> **Two readers tested this document, from very different backgrounds. Both went back and re-read inside §2. Neither re-read a line of §9.5 for its algebra.**
+>
+> §2 presents a **six-position symbol** — a depth, a core letter, two independent superscripts, a pre-superscript and an index — **before any mathematics has been done at all**, and so before you have anything to attach it to. That is a **notation load**, not an algebra load, and it is the genuine difficulty spike in this module.
+>
+> **How to read it:** skim §2 once, do not try to memorise it, and **come back to it after §8.** Everything from §3 to §8 can be followed with only three symbols — $P$ for the Prime String, $B$ for the Base String, and $jS$ for the $j$-th substring. **§2 is a reference section, and it is placed first for lookup, not because it must be absorbed first.** You can skip them on a first reading and lose nothing but the reason the main result is *guaranteed* rather than merely observed.
 
 ## 0.2 What you will be able to do at the end
 
@@ -448,32 +455,32 @@ B     0    1    8   27   64  125
 
 ```
 k = 4
-B     0    1   16   81  256  625 1296 2401
-1S       1   15   65  175  369  671 1105
-2S         14   50  110  194  302  434
-3S            36   60   84  108  132
-4S               24   24   24   24    <- ROOT = 24 = 4!
+B       0     1    16    81   256   625  1296  2401
+1S         1    15    65   175   369   671  1105
+2S           14    50   110   194   302   434
+3S              36    60    84   108   132
+4S                 24    24    24    24   <- ROOT = 24 = 4!
 ```
 
 ```
 k = 5
-B     0    1   32  243 1024 3125 7776 16807 32768
-1S       1   31  211  781 2101 4651  9031 15961
-2S         30  180  570 1320 2550 4380  6930
-3S           150  390  750 1230 1830  2550
-4S              240  360  480  600  720
-5S                 120  120  120  120  <- ROOT = 120 = 5!
+B        0      1     32    243   1024   3125   7776  16807  32768
+1S          1     31    211    781   2101   4651   9031  15961
+2S            30    180    570   1320   2550   4380   6930
+3S              150    390    750   1230   1830   2550
+4S                 240    360    480    600    720
+5S                    120    120    120    120   <- ROOT = 120 = 5!
 ```
 
 ```
 k = 6
-B     0    1   64  729 4096 15625 46656 117649 262144 531441 1000000
-1S       1   63  665 3367 11529 31031  70993 144495 269297  468559
-2S         62  602 2702 8162 19502 39962  73502 124802  199262
-3S           540 2100 5460 11340 20460 33540  51300   74460
-4S              1560 3360 5880  9120 13080 17760  23160
-5S                  1800 2520 3240  3960  4680   5400
-6S                      720  720  720   720   720  <- ROOT = 720 = 6!
+B          0        1       64      729     4096    15625    46656   117649   262144   531441  1000000
+1S             1       63      665     3367    11529    31031    70993   144495   269297   468559
+2S                62      602     2702     8162    19502    39962    73502   124802   199262
+3S                   540     2100     5460    11340    20460    33540    51300    74460
+4S                      1560     3360     5880     9120    13080    17760    23160
+5S                          1800     2520     3240     3960     4680     5400
+6S                               720      720      720      720      720   <- ROOT = 720 = 6!
 ```
 
 ### 9.2.3 A useful property of these tables
@@ -662,9 +669,16 @@ Both counts describe the same set of arrangements, so they are equal. $\blacksqu
 
 It is natural to want several confirmations of an important result, and natural to feel more confident as the number grows. But **confirmations only add confidence when they are genuinely independent, and independence is easy to overestimate.**
 
-While preparing this module, four separate proofs of the Root Theorem were assembled: the descent of degree (§9.5); an argument using a change of basis into falling products; an argument using operator algebra on the difference operator; and the counting argument (§9.6).
+While preparing this module, **four** separate proofs of the Root Theorem were assembled. Here they are with the premise each one actually leans on:
 
-**On inspection, the first three are not independent of one another.** All three rest on the same underlying fact — how the difference operator behaves on polynomials — dressed in three different notations. If that underlying fact had been misunderstood, **all three would have been wrong together**, and their agreement would have looked like strong corroboration while providing almost none.
+| # | Argument | Premise it rests on | Independent? |
+|---|---|---|---|
+| 1 | Descent of degree (§9.5) | how differencing acts on polynomials | — |
+| 2 | Change of basis into falling products | how differencing acts on polynomials | **no — same as 1** |
+| 3 | Operator algebra, used to prove the theorem directly | how differencing acts on polynomials | **no — same as 1** |
+| 4 | Counting surjections (§9.6.2) | inclusion–exclusion on finite sets | **yes** |
+
+**Read down the third column.** Arguments 1, 2 and 3 are **one argument in three notations.** If that single underlying fact had been misunderstood, **all three would have been wrong together**, and their agreement would have looked like strong corroboration while providing almost none.
 
 **Only the counting argument asks a genuinely different question.** So the honest count is **two** independent proofs, not four.
 
@@ -1051,6 +1065,16 @@ And then the question that makes the whole subject interesting: **is there a seq
 
 # 16. Revision History
 
+**Version 5.** The XO refiled his return to the requested specification — *where a reader went back*, rather than a review — and it carried findings his first return had not.
+
+1. **§0.1 was measuring the wrong axis, and this is the most useful thing either reader returned.** §0.1 flagged §9.5 and §9.6 as the hard sections, on the grounds that they use the binomial theorem and elementary counting. **But both readers went back and re-read inside §2, and neither re-read §9.5 for its algebra.** The difficulty spike is a **notation load** — a six-position symbol presented before any mathematics has been done, so before the reader has anything to attach it to. §0.1 now says so, and tells the reader to skim §2 and return to it after §8, since §3–§8 need only $P$, $B$ and $jS$.
+2. **§9.2.2's tables had stopped being self-checking at $k=5$ and $k=6$.** §9.2.3 claims the Root row is its own error detector — **but that check is visual, and it depends on each child sitting between its two parents.** As the values widened to five and six digits the columns drifted, and the pairing could only be recovered by counting characters. **All three large tables are now correctly aligned**, so the claim in §9.2.3 is true of the tables as printed and not merely in principle.
+3. **§9.7 asked the reader to hold an ordered list across a sentence boundary** — four arguments named in one sentence, "the first three" adjudicated in the next — in the paragraph the module most wants to land. **It is now a four-row table with each argument's premise stated beside it**, so the one survivor is unmissable.
+
+**One observation from the XO worth preserving, because it is the pattern this document keeps finding in itself.** Version 3 fixed an ambiguity between index and position by introducing the notation $B^{2}(4)$ — **and thereby introduced a second, undefined notation in the very act of clearing the first.** Version 4 fixed that in turn. *A remedy that creates its own mirror is not carelessness; it is what happens when a fix is checked against the problem it was aimed at rather than against the document as a whole.*
+
+**A note on the two readers, since it bears on how much weight these revisions carry.** Neither is a mathematician; both reported full comprehension; **both returned defects anyway.** The XO asked to be treated as a **lower bound** on difficulty, on the explicit grounds that he does not fatigue and so will under-report any difficulty whose mechanism is accumulated load rather than ambiguity. **Where he went back, a human reader very likely stalls. Where he did not, nothing has been learned about a human reader at all.**
+
 **Version 4.** Two officers outside mathematics — the XO and COMMO — were tasked to read Version 3 and report comprehension. Both reported full comprehension. **Both also returned defects, and between them they found ten things wrong with a document that had already been through a directed runthrough.**
 
 **The two substantive ones:**
@@ -1094,4 +1118,4 @@ Changes from Version 1, all in response to a directive to verify the Root Theore
 
 ---
 
-*End of Module 1, Version 4.*
+*End of Module 1, Version 5.*
