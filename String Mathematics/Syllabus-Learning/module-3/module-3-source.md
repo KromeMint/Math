@@ -2,14 +2,14 @@
 title: "String Mathematics — Module 3"
 subtitle: "Tuned Comparisons, Locating Damage, and the Minimum a Tree Remembers"
 author: "Prime Framework — Syllabus-Learning Series"
-date: "Module 3 of the String Mathematics syllabus — Version 2"
+date: "Module 3 of the String Mathematics syllabus — Version 3"
 ---
 
 # Module 3 — Tuning the Comparison
 
 ## One Relationship That Contains Both Lineages, and Two Things a String Tree Knows About Itself
 
-**Version 2.** Prerequisite: Modules 1 and 2.
+**Version 3.** Prerequisite: Modules 1 and 2. See §11 for the revision history.
 
 ---
 
@@ -114,7 +114,7 @@ B          0    2    8   24   64  160
 
 Each entry, computed:
 
-| | |
+| Level | Working, entry by entry |
 |---|---|
 | $1S_{(2)}$ | $2-2(0)=2$ · $8-2(2)=4$ · $24-2(8)=8$ · $64-2(24)=16$ · $160-2(64)=32$ |
 | $2S_{(2)}$ | $4-2(2)=0$ · $8-2(4)=0$ · $16-2(8)=0$ · $32-2(16)=0$ |
@@ -333,12 +333,12 @@ Here is one. It is crude and it beats judgement.
 
 **Worked on this syllabus's own material** — the four arguments assembled for the Root Theorem:
 
-| Argument | Premise it uses | |
+| Argument | Premise it uses | Independent? |
 |---|---|---|
-| Descent of degree | how differencing acts on polynomials | ← |
-| Falling-product basis | how differencing acts on polynomials | ← **same** |
-| Operator algebra, used directly | how differencing acts on polynomials | ← **same** |
-| Counting surjections | inclusion–exclusion on finite sets | ✔ different |
+| Descent of degree | how differencing acts on polynomials | — (the baseline) |
+| Falling-product basis | how differencing acts on polynomials | **no — same premise** |
+| Operator algebra, used directly | how differencing acts on polynomials | **no — same premise** |
+| Counting surjections | inclusion–exclusion on finite sets | **yes** |
 
 **Three lists identical, one disjoint. Honest count: two independent arguments, not four.**
 
@@ -458,4 +458,18 @@ Three threads remain open, and they are named here rather than promised.
 
 ---
 
-*End of Module 3, Version 2.*
+# 11. Revision History
+
+**Version 3.** **Table audit.** Every table in this module was checked for blank cells and for rows whose width did not match their header. **The fault found was blank column headings** — a column with no heading reads as missing information, and in a rendered document it simply appears empty. All are now labelled.
+
+*Method note, since it matters more than the fix:* the first hypothesis was that a `|` inside mathematics was splitting cells, which would have been a serious and silent corruption. **That was checked against the rendered document and proved false** — the converter's cell-splitter is mathematics-aware. Had the fix been applied on the hypothesis rather than on the evidence, it would have mangled every notation in the syllabus to solve a problem that did not exist.
+
+Two tables corrected: §2.5's working table had **both** column headings blank (now **Level** and **Working, entry by entry**), and §7's independence table had an unlabelled verdict column carrying only arrows and ticks — now headed **Independent?** with the verdicts written as words, matching the equivalent table in Module 1 §9.7.
+
+**Version 2.** The counting-side twin of the independence test added as §7.1.
+
+**Version 1.** Initial issue.
+
+---
+
+*End of Module 3, Version 3.*

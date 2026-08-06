@@ -2,14 +2,14 @@
 title: "String Mathematics — Module 1"
 subtitle: "Foundations: Strings, Trees, the Root, and the Factorial"
 author: "Prime Framework — Syllabus-Learning Series"
-date: "Module 1 of the String Mathematics syllabus — Version 6"
+date: "Module 1 of the String Mathematics syllabus — Version 7"
 ---
 
 # Module 1 — Foundations
 
 ## Strings, String Trees, the Root, and the Factorial
 
-**Version 6.** See §16 for the revision history.
+**Version 7.** See §16 for the revision history.
 
 ---
 
@@ -646,7 +646,7 @@ Count them by inclusion–exclusion. There are $j^k$ ways to place $k$ balls int
 
 Two balls $\{1, 2\}$, two boxes $\{A, B\}$. All possible placements:
 
-| | ball 1 | ball 2 | every box used? |
+| Placement | ball 1 goes in | ball 2 goes in | every box used? |
 |---|---|---|---|
 | 1 | A | A | no — B is empty |
 | 2 | A | B | **yes** |
@@ -818,7 +818,7 @@ The useful reading is not "the Root Theorem is a special case" but:
 |---|---|
 | The degree $k$ — via the depth at which it appears | Every lower-order term |
 | The leading coefficient $A$ — via $R / k!$ | The starting value of the Prime String |
-| | *How* $A$ was arrived at: step, multiplier, or both |
+| *(nothing else — the list is complete at two)* | *How* $A$ was arrived at: step, multiplier, or both |
 
 That last row is the point of §10.2. **The Root cannot tell you whether a leading coefficient of 8 came from cubing a step-2 string or from multiplying a cube by 8** — because there is no difference between those two strings to detect.
 
@@ -1071,6 +1071,12 @@ And then the question that makes the whole subject interesting: **is there a seq
 
 # 16. Revision History
 
+**Version 7.** **Table audit.** Every table in this module was checked for blank cells and for rows whose width did not match their header. **The fault found was blank column headings** — a column with no heading reads as missing information, and in a rendered document it simply appears empty. All are now labelled.
+
+*Method note, since it matters more than the fix:* the first hypothesis was that a `|` inside mathematics was splitting cells, which would have been a serious and silent corruption. **That was checked against the rendered document and proved false** — the converter's cell-splitter is mathematics-aware. Had the fix been applied on the hypothesis rather than on the evidence, it would have mangled every notation in the syllabus to solve a problem that did not exist.
+
+Two tables corrected here: §9.6's placement table had an unlabelled first column (now **Placement**), and §10.3's detects/ignores table had an empty cell where the "detects" list ran out before the "ignores" list did — now stated explicitly as *"nothing else — the list is complete at two"*, which is the actual content rather than a gap.
+
 **Version 6.** Three refinements arising from a reader adjudicating his own evidence against himself.
 
 1. **§0.1 mis-named a tool.** It described §9.6 as using "elementary counting". **Inclusion–exclusion at general $k$ is not elementary counting** — it is a genuine step beyond arithmetic, and calling it elementary set a reader up to expect less than the section delivers. Now named correctly, with a pointer to the fully worked $k=2$ case.
@@ -1134,4 +1140,4 @@ Changes from Version 1, all in response to a directive to verify the Root Theore
 
 ---
 
-*End of Module 1, Version 6.*
+*End of Module 1, Version 7.*

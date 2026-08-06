@@ -2,14 +2,14 @@
 title: "String Mathematics — Module 2"
 subtitle: "The Ratio Lineage, and the Sequence Between"
 author: "Prime Framework — Syllabus-Learning Series"
-date: "Module 2 of the String Mathematics syllabus — Version 1"
+date: "Module 2 of the String Mathematics syllabus — Version 2"
 ---
 
 # Module 2 — The Ratio Lineage
 
 ## Two Lineages, One Idea, and the Object That Sits Between Them
 
-**Version 1.** Prerequisite: Module 1, §1–§11.
+**Version 2.** Prerequisite: Module 1, §1–§11. See §16 for the revision history.
 
 ---
 
@@ -142,7 +142,7 @@ Module 1 §6 is its load-bearing idea: a comparison carries **how far** and **wh
 
 It does, and the translation is exact.
 
-| | Difference | Ratio |
+| What the comparison carries | Difference | Ratio |
 |---|---|---|
 | **"Which way"** | sign: $+$ or $-$ | $> 1$ or $< 1$ |
 | **"No change"** | $0$ | $1$ |
@@ -552,4 +552,14 @@ Module 1 was tested by two readers who were not mathematicians and who returned 
 
 ---
 
-*End of Module 2, Version 1.*
+# 16. Revision History
+
+**Version 2.** **Table audit.** Every table in this module was checked for blank cells and for rows whose width did not match their header. **The fault found was blank column headings** — a column with no heading reads as missing information, and in a rendered document it simply appears empty. All are now labelled.
+
+*Method note, since it matters more than the fix:* the first hypothesis was that a `|` inside mathematics was splitting cells, which would have been a serious and silent corruption. **That was checked against the rendered document and proved false** — the converter's cell-splitter is mathematics-aware. Had the fix been applied on the hypothesis rather than on the evidence, it would have mangled every notation in the syllabus to solve a problem that did not exist.
+
+One table corrected: §5's comparison of the two lineages had an unlabelled first column, now **What the comparison carries**.
+
+---
+
+*End of Module 2, Version 2.*
